@@ -63,7 +63,7 @@ class PgLock
         return self
       else
         return false if attempt.next == max_attempts
-        log.call("Attempt ##{attempt}. Lock creation failed. Antoher process probably has the lock. Sleeping #{attempt_interval}") if log
+        log.call("Attempt ##{attempt}. Lock creation failed. Another process probably has the lock. Sleeping #{attempt_interval}") if log
         sleep attempt_interval
       end
     end
